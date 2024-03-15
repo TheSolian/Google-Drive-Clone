@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "driver": "PostgreSQL",
+      "name": "DB",
+      "database": "google_drive_clone",
+      "username": "postgres",
+      "password": "Legs0505",
+      "connectString": "postgresql://postgres:postgres@localhost:5432/google_drive_clone"
+    }
+  ]
+}
