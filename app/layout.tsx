@@ -1,6 +1,7 @@
 import { auth } from '@/auth'
 import { Toaster } from '@/components/ui/sonner'
 // import '@/env-types'
+import { PathProvider } from '@/context/path-context'
 import { db } from '@/lib/db'
 import type { Metadata } from 'next'
 import { SessionProvider } from 'next-auth/react'
@@ -23,12 +24,14 @@ export default async function RootLayout({
 
   return (
     <SessionProvider session={session}>
-      <html lang="en">
-        <body className={inter.className}>
-          <Toaster />
-          {children}
-        </body>
-      </html>
+      <PathProvider>
+        <html lang="en">
+          <body className={inter.className}>
+            <Toaster />
+            {children}
+          </body>
+        </html>
+      </PathProvider>
     </SessionProvider>
   )
 }

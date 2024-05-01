@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+
 export default function Page() {
-  return <main className="w-full h-full bg-white rounded-lg">dw</main>
+  return redirect('/my-drive/root')
 }

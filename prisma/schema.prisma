@@ -26,6 +26,7 @@ model User {
   accounts              Account[]
   isTwoFactorEnabled    Boolean                @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
+  files                 File[]
 }
 
 model Account {
@@ -80,4 +81,18 @@ model TwoFactorConfirmation {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId])
+}
+
+model File {
+  id         String  @id @default(cuid())
+  name       String
+  fileType   String?
+  mimeType   String?
+  size       Int?
+  parent     File?   @relation("ParentFile", fields: [parentId], references: [id])
+  parentId   String?
+  childFiles File[]  @relation("ParentFile")
+  ownerId    String
+  owner      User    @relation(fields: [ownerId], references: [id])
+  awsUrl     String?
 }
