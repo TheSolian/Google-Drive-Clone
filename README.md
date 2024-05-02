@@ -1,6 +1,6 @@
 # Google Drive Clone
 
-## Installation
+## Installation
 
 1. Pull Project
 2. Execute following command: `npm install`
