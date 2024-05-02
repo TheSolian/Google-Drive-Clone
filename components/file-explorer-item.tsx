@@ -82,12 +82,6 @@ export const FileExplorerItem: React.FC<Props> = ({ file, onChange }) => {
               <TrashIcon className="w-4 h-4 mr-2" />
               Delete
             </DropdownMenuItem>
-            {file.mimeType !== null && (
-              <DropdownMenuItem className="cursor-pointer">
-                <DownloadIcon className="w-4 h-4 mr-2" />
-                Download
-              </DropdownMenuItem>
-            )}
           </DropdownMenuContent>
         </DropdownMenu>
         <UpdateFolderDialog
